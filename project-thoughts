@@ -1,0 +1,29 @@
+Load a lecture as a source to an audio div
+Create a notepad for the listener to take notes on the lecture
+
+Design a system for the notepad that will show the listener at
+	what point in the lecture his notes were taken
+
+Store the contents of text area, then on loop: 
+	retrieve the contents of the text area
+	retrieve the time of the video
+
+Compare the contents of the text area to the previous contents
+	and do the following:
+	store the differece of the current contents and the
+	previous contents with the retrieved time of video
+
+I need to output these differences in  human readable manner
+	I need ideas:
+
+	Store on enter, and clear text box to prepare for new text 
+	Problem:	What if he wants to go back and edit something,
+				it will have already stored it and cleared out.
+	
+	Solution:	Create a cue, where there is a lag of one enter,
+				so as not to remove text so close to his typing 
+
+For editing:
+	Problem:	User may want to keep typing on previously established time blocks which would 				run into the next time stamp
+				
+	Solution:	allow him to kep typing, and cue up the next time stamps textbox below the 					current text box, and on command of some sort, remove current textbox and bring 			up the next one into view
