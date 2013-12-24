@@ -27,3 +27,17 @@ For editing:
 	Problem:	User may want to keep typing on previously established time blocks which would 				run into the next time stamp
 				
 	Solution:	allow him to kep typing, and cue up the next time stamps textbox below the 					current text box, and on command of some sort, remove current textbox and bring 			up the next one into view
+
+The interface will look sort of like a facebook message, with the notes already taken being scrolled up the page, with te note taking box remaining stationary.
+
+________________________
+|		________	   |
+|	Now:|______|	   |
+|	1:0...Notes...	   |
+|	1:2...Notes...	   |
+|	1:3...Notes...	   |
+|	1:4...Notes...	   |
+|	1:5...Notes...	   |
+|		________	   |
+|	Now:|______|	   |
+|______________________|
