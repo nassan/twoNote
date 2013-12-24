@@ -1,0 +1,21 @@
+*{
+	margin: 0 auto;
+}
+
+#notes-taken{
+
+	width: 600px;
+	height: 500px;
+	background-color: gray;
+}
+
+#current-audio{
+	
+	display: table;
+}
+
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
