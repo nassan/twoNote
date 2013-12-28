@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<title>twoNote</title>
+</head>
+<body>
+<div class = "page">
+	<h1>twoNote</h1>
+	<div class = metanav>
+		
+		{%if not session.logged_in %}
+			<a href="{{url_for('login')}}">Log in</a>
+		{%else%}
+			<a href="{{url_for('logout')}}">Log out</a>
+	</div>
+	
+	{%for message in get_flashed_messages()%}
+		
+		<div class = flash>{{message}}</div>
+	
+	{%endfor%}
+	{% block body %}
+		
+	{% endblock %}
+</div>
+</body>
+</html>
