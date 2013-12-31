@@ -12,7 +12,7 @@ Create a notepad for the listener to take notes on the lecture
 Design a system for the notepad that will show the listener at
 	what point in the lecture his notes were taken
 
-Store the contents of text area, then on loop: 
+On keypress, make sure there is no keypress for 5 seconds to execute the notemaker, that way his note taking will not be interrupted:
 	retrieve the contents of the text area
 	retrieve the time of the video
 
