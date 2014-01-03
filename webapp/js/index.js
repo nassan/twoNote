@@ -1,5 +1,5 @@
 // Define relative globals
-var notesArray = [];
+var notes = new Firebase('https://twonote.firebaseio.com/')
 var timer = null;
 
 // Prepare the textarea singleton
@@ -23,7 +23,6 @@ var textarea = {
 //  Updates the states of the textarea based on most recent returned value
     updateValues : function(){
         this.value.old = this.value.current;
-        console.log(this.value.old)
         this.value.current = $('textarea').val();
     },
 
@@ -49,13 +48,13 @@ var textarea = {
             var newNote = new Note(this.value.current, timeStamp, readableTimeStamp );
 
             // And push it onto the notesArray for record
-            notesArray.push(newNote);
+            notes.push(newNote);
 //            console.log(newNote);
 
             // And append it to the div for visualization
 //          Create a link showing the time the note was taken
             var noteP = $('<p/>').addClass('note'),
-                timeA = '<a href="">'+newNote.readableTimeStamp + '</a>';
+                timeA = '<a id="'+newNote.timeStamp +'">'+newNote.readableTimeStamp + '</a>';
             noteP.html(timeA + newNote.actualNotes)
             $("#notes-taken").append(noteP);
             $('textarea').val('');
@@ -78,13 +77,24 @@ var audio = {
     //Gets the current time of the notes audio file
         return this.getElement().currentTime;
     },
+    setCurrentTime : function(timeToSetAudio){
+       this.getElement().currentTime = timeToSetAudio;
+        console.log(timeToSetAudio)
+    },
 
+
+//    gets all notes (class of note in the DOM) and adds an on click listener to the element
+//        which calls a functin to send a new currenttime to the global audio
     addClickListeners : function(){
         $(".note").click(function(){
-            alert(this)
-                audio.getElement().currentTime = 5
-        })
+            audio.setCurrentTime(this.firstChild.id)})
     }
+
+};
+
+//Holds data and methods that work with both the notes and the audio
+var application = {
+//    For editing, I need to get
 
 };
 
@@ -106,6 +116,6 @@ function countdown(){
 
 
 $(document).ready(function(){
-    alert("Last edited function: addClickListeners")
+//    alert("Last edited function: addClickListeners")
     textarea.divKeyStrokeWatcher()
 });

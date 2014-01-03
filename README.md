@@ -3,8 +3,7 @@ twoNote
 
 Pronounced 'tuwoo note'
 
-Using flask as the framework
-http://flask.pocoo.org/
+Will be using deployd for the backend.
 
 We will see what happens with the front end
 
