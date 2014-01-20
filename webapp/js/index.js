@@ -1,5 +1,5 @@
 // Define relative globals
-var notes = new Firebase('https://twonote.firebaseio.com/')
+var notes = [];
 var timer = null;
 
 // Prepare the textarea singleton
